@@ -43,6 +43,7 @@ https://stackoverflow.com/questions/42424544/here-api-these-credentials-do-not-a
 ***Shapefiles***
 You may download TIGER/Line Shapefiles using a Web interface, directly from our FTP site, or via an FTP client. To download through the Web interface or FTP site, go to <www.census.gov/programs -surveys/geography. html>. Choose Geographies, then Mapping Files, then TIGER/Line Shapefiles.
 
+Which files are national?  https://www.census.gov/programs-surveys/geography/technical-documentation/complete-technical-documentation/file-availability.html.  I found some national block group files at https://data2.nhgis.org/downloads when searching 2020.  
 
 ***To Do:***
 Figure out how to get miles driven to nearest MIGS from county centroid.  
