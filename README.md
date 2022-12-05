@@ -36,3 +36,4 @@ county_female_pop <- get_acs(geography = "county",
 Limitations are limited population data 'Getting data from the 2019 1-year ACS.  The 1-year ACS provides data for geographies with populations of 65,000 and greater.'
 
 ***To Do:***
+Figure out how to get miles driven to nearest MIGS from county centroid.  
