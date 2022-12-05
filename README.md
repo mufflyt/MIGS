@@ -35,5 +35,14 @@ county_female_pop <- get_acs(geography = "county",
 ***Limitations***
 Limitations are limited population data 'Getting data from the 2019 1-year ACS.  The 1-year ACS provides data for geographies with populations of 65,000 and greater.'
 
+***Isochrones Tutorial***
+http://www.hrecht.com/r-drive-time-analysis-tutorial/tutorial.html
+Make sure you are using the API key and not the Oath bearer ID.  
+https://stackoverflow.com/questions/42424544/here-api-these-credentials-do-not-authorize-access-some-requests
+
+***Shapefiles***
+You may download TIGER/Line Shapefiles using a Web interface, directly from our FTP site, or via an FTP client. To download through the Web interface or FTP site, go to <www.census.gov/programs -surveys/geography. html>. Choose Geographies, then Mapping Files, then TIGER/Line Shapefiles.
+
+
 ***To Do:***
 Figure out how to get miles driven to nearest MIGS from county centroid.  
