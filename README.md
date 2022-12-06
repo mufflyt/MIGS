@@ -75,7 +75,7 @@ Sys.getenv("CENSUS_KEY")
 ```
 ***get_census_data.R***
 Instead of the Southeast US with 10 fips codes only I want to get data for the entire USA.  I used this code:
-'''r
+```r
 us_fips <- tigris::fips_codes %>%
   select(state_code, state_name) %>%
   dplyr::distinct(state_code, .keep_all = TRUE) %>%
