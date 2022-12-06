@@ -43,12 +43,23 @@ https://stackoverflow.com/questions/42424544/here-api-these-credentials-do-not-a
 ***Shapefiles***
 You may download TIGER/Line Shapefiles using a Web interface, directly from our FTP site, or via an FTP client. To download through the Web interface or FTP site, go to <www.census.gov/programs -surveys/geography. html>. Choose Geographies, then Mapping Files, then TIGER/Line Shapefiles.
 
-
 Which files are national?  https://www.census.gov/programs-surveys/geography/technical-documentation/complete-technical-documentation/file-availability.html.  I found some national block group files at Block group data source: IPUMS NHGIS 2019 national shapefile and https://data2.nhgis.org/downloads when searching 2020.  
 
 Where is the water?  Downloaded the National Hydrography file from USGS.  https://www.sciencebase.gov/catalog/item/5ea068ae82cefae35a12a120, http://prd-tnm.s3-website-us-west-2.amazonaws.com/?prefix=StagedProducts/Hydrography/NHD/State/Shape/
 
-**clip_to_water.R** - This file downloads all the water in each state and then makes one US layer.  The file is outputed as an sf object called 'nhd-water.shp'.  
+**clip_to_water.R** - This file downloads all the water in each state and then makes one US layer.  The file is outputed as an sf object called 'nhd-water.shp'.  These files are real THICC so I downloaded them to the external hard drive by changing the download settings in Chrome.  
+
+Sweet code block from the www.hrecht.com code to unzip a ton of files at once.  hrecht is a baller and a shot caller:
+```r
+for (i in stroke_states$state_name) {
+  #i = "Alabama" #for testing
+	formatted <- str_replace_all(i, " ", "_")
+	print(formatted)
+	save_path <- paste0(nhd_directory, "NHD_H_", formatted, "_State_Shape.zip")
+	dir.create(paste0(nhd_directory, formatted, "/"))
+	unzip(save_path, exdir = paste0(nhd_directory, formatted, "/"))
+}
+```
 
 ***To Do:***
 Figure out how to get miles driven to nearest MIGS from county centroid.  
