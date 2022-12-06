@@ -47,10 +47,12 @@ Which files are national?  https://www.census.gov/programs-surveys/geography/tec
 
 Where is the water?  Downloaded the National Hydrography file from USGS.  https://www.sciencebase.gov/catalog/item/5ea068ae82cefae35a12a120, http://prd-tnm.s3-website-us-west-2.amazonaws.com/?prefix=StagedProducts/Hydrography/NHD/State/Shape/
 
-**clip_to_water.R** - This file downloads all the water in each state and then makes one US layer.  The file is outputed as an sf object called 'nhd-water.shp'.  These files are real THICC so I downloaded them to the external hard drive by changing the download settings in Chrome.  
-
-Sweet code block from the www.hrecht.com code to unzip a ton of files at once.  hrecht is a baller and a shot caller:
+**clip_to_water.R** - This file downloads all the water in each state and then makes one US layer.  The file is outputed as an sf object called 'nhd-water.shp'.  These files are real THICC bois so I downloaded them to the external hard drive by changing the download settings in Chrome.  Sweet code block from the www.hrecht.com code to unzip a ton of files at once.  hrecht is a baller and a shot caller:
 ```r
+# Turn fips into names for file downloading
+nhd_directory <- "/Volumes/Video Projects Muffly 1/Workforce/Hydrology/"
+
+# Downloaded manually, then run code to unzip in nice subfolders
 for (i in stroke_states$state_name) {
   #i = "Alabama" #for testing
 	formatted <- str_replace_all(i, " ", "_")
@@ -59,6 +61,16 @@ for (i in stroke_states$state_name) {
 	dir.create(paste0(nhd_directory, formatted, "/"))
 	unzip(save_path, exdir = paste0(nhd_directory, formatted, "/"))
 }
+```
+
+**Make sure that API for the US Census Bureau is loaded up**
+```r
+# Add key to .Renviron
+Sys.setenv(CENSUS_KEY="xyz")
+# Reload .Renviron
+readRenviron("~/.Renviron")
+# Check to see that the expected key is output in your R console
+Sys.getenv("CENSUS_KEY")
 ```
 
 ***To Do:***
