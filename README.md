@@ -65,6 +65,7 @@ for (i in stroke_states$state_name) {
 
 **Make sure that API for the US Census Bureau is loaded up**
 ```r
+#https://www.hrecht.com/censusapi/articles/getting-started.html
 # Add key to .Renviron
 Sys.setenv(CENSUS_KEY="xyz")
 # Reload .Renviron
@@ -72,6 +73,21 @@ readRenviron("~/.Renviron")
 # Check to see that the expected key is output in your R console
 Sys.getenv("CENSUS_KEY")
 ```
+**get_isochrones.R** - This file calls the API for here and finds the isochrones.  Impressive AF.  I also like how she named the files get-??? so you had an idea of what goes first.  
+
+I kept getting this error and it was solved by SO.  
+`In CPL_write_ogr(obj, dsn, layer, driver, as.character(dataset_options),  :
+  GDAL Error 1: data/shp/isochrones/isochrones.shp does not appear to be a file or directory.`
+https://stackoverflow.com/questions/60454067/cpl-write-ogr-error-when-writing-out-shape-file-in-r
+
+***make_delta-appalchian-region.R***
+This was a treasure trove of SHP files:  https://www2.census.gov/geo/tiger/GENZ2019/shp/ and where I found this beaut: cb_2019_us_county_5m.shp.  
+
+***Calculate polygon demographics.R****
+Runs great.  
+
+***Calculate-polygon-overlap.R***
+I could not find "block-groups-water-removed.shp" created anywhere.  I think she created ""block-groups-water-removed.shp"" in QGIS.  
 
 ***To Do:***
 Figure out how to get miles driven to nearest MIGS from county centroid.  
