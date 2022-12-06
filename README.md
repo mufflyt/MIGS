@@ -73,6 +73,15 @@ readRenviron("~/.Renviron")
 # Check to see that the expected key is output in your R console
 Sys.getenv("CENSUS_KEY")
 ```
+***get_census_data.R***
+Instead of the Southeast US with 10 fips codes only I want to get data for the entire USA.  I used this code:
+'''r
+us_fips <- tigris::fips_codes %>%
+  select(state_code, state_name) %>%
+  dplyr::distinct(state_code, .keep_all = TRUE) %>%
+  filter(state_code <56) %>% select(state_code) %>% pull()
+```
+
 **get_isochrones.R** - This file calls the API for here and finds the isochrones.  Impressive AF.  I also like how she named the files get-??? so you had an idea of what goes first.  
 
 I kept getting this error and it was solved by SO.  
@@ -87,7 +96,7 @@ This was a treasure trove of SHP files:  https://www2.census.gov/geo/tiger/GENZ2
 Runs great.  
 
 ***Calculate-polygon-overlap.R***
-I could not find "block-groups-water-removed.shp" created anywhere.  I think she created ""block-groups-water-removed.shp"" in QGIS.  
+I could not find "block-groups-water-removed.shp" created anywhere.  I think she created ""block-groups-water-removed.shp"" in QGIS.  Downloaded QGIS and this thing is nice.  I wonder if it has programmable code because I am going to forget a step here or there.  The grouped block areas had some invalid geometry so I started with the county level data.  Will need to use this link to figure out how to make the gemoetry valid: https://www.qgistutorials.com/en/docs/3/handling_invalid_geometries.html
 
 ***To Do:***
-Figure out how to get miles driven to nearest MIGS from county centroid.  
+Figure out which data we want to get for get_census_data.R.  US female population counts.  
