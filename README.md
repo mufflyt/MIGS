@@ -63,6 +63,33 @@ for (i in stroke_states$state_name) {
 }
 ```
 
+This is some more amazing code where all the state shapefiles are brought together.  WOW!
+```r
+###########################################################################
+# Read in Waterbody shapefiles and join non-tiny features
+###########################################################################
+water <- NULL
+for (i in stroke_states$state_name) {
+  #i = "Washington" #for testing
+	formatted <- str_replace_all(i, " ", "_")
+	print(formatted)
+	
+	# If more than 200k features it's split into multiple files
+	waterbody_files <- fs::dir_info(paste0(nhd_directory, formatted, "/Shape/"), recurse = FALSE, glob = "*.shp")%>% #Creates: /Volumes/Video Projects Muffly 1/Workforce/Hydrology/Alabama/Shape/NHDWaterbody.shp
+		filter(type == "file" & str_detect(path, "NHDWaterbody")) %>%
+		select(path)
+	
+	for (f in 1:nrow(waterbody_files)) {
+	  #f=1 #for testing
+		water_full <- st_read(waterbody_files[f,])
+		water_min <- water_full %>% filter(areasqkm > 1)
+		water <- bind_rows(water, water_min)
+	}
+	
+}
+rm(water_full, water_min)
+```
+
 **Make sure that API for the US Census Bureau is loaded up**
 ```r
 #https://www.hrecht.com/censusapi/articles/getting-started.html
