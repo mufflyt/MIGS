@@ -47,7 +47,7 @@ Which files are national?  https://www.census.gov/programs-surveys/geography/tec
 
 Where is the water?  Downloaded the National Hydrography file from USGS.  https://www.sciencebase.gov/catalog/item/5ea068ae82cefae35a12a120, http://prd-tnm.s3-website-us-west-2.amazonaws.com/?prefix=StagedProducts/Hydrography/NHD/State/Shape/
 
-**clip_to_water.R** - This file downloads all the water in each state and then makes one US layer.  The file is outputed as an sf object called 'nhd-water.shp'.  These files are real THICC bois so I downloaded them to the external hard drive by changing the download settings in Chrome.  Sweet code block from the www.hrecht.com code to unzip a ton of files at once.  hrecht is a baller and a shot caller:
+**clip_to_water.R** - Able to scale to the entire USA.  This file downloads all the water in each state and then makes one US layer.  The file is outputed as an sf object called 'nhd-water.shp'.  These files are real THICC bois so I downloaded them to the external hard drive by changing the download settings in Chrome.  Sweet code block from the www.hrecht.com code to unzip a ton of files at once.  hrecht is a baller and a shot caller:
 ```r
 # Turn fips into names for file downloading
 nhd_directory <- "/Volumes/Video Projects Muffly 1/Workforce/Hydrology/"
