@@ -62,8 +62,7 @@ for (i in stroke_states$state_name) {
 	unzip(save_path, exdir = paste0(nhd_directory, formatted, "/"))
 }
 ```
-
-This is some more amazing code where all the state shapefiles are brought together.  WOW!
+I keep getting a corrupt zip file for Oregon and Texas so the zip files were downloaded again and manually unzipped instead of using code.  This is some more amazing code where all the state shapefiles are brought together.  WOW!
 ```r
 ###########################################################################
 # Read in Waterbody shapefiles and join non-tiny features
