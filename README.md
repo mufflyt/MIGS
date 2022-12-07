@@ -124,5 +124,8 @@ Runs great.
 ***Calculate-polygon-overlap.R***
 I could not find "block-groups-water-removed.shp" created anywhere.  I think she created ""block-groups-water-removed.shp"" in QGIS.  Downloaded QGIS and this thing is nice.  I wonder if it has programmable code because I am going to forget a step here or there.  The grouped block areas had some invalid geometry so I started with the county level data.  Will need to use this link to figure out how to make the gemoetry valid: https://www.qgistutorials.com/en/docs/3/handling_invalid_geometries.html
 
+qgis steps: Bring in data/shp/water/water-processed/nhd-water.shp and /workforce/Code/2021-delta-appalachia-stroke-access/data/shp/block-groups.  
+Open processing toolbox and chose "Check Validity".  Run "Fix Geometries" on the Error Layer.  
+
 ***To Do:***
 Figure out which data we want to get for get_census_data.R.  US female population counts.  
