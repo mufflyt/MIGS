@@ -129,3 +129,6 @@ Open processing toolbox and chose "Check Validity".  Run "Fix Geometries" on the
 
 ***To Do:***
 Figure out which data we want to get for get_census_data.R.  US female population counts.  
+
+***Urban vs. Rural***
+`r tigris::urban_areas()`:  Urban areas include both "urbanized areas," which are densely developed areas with a population of at least 50,000, and "urban clusters," which have a population of greater than 2,500 but less than 50,000.
