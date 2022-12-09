@@ -131,4 +131,6 @@ Open processing toolbox and chose "Check Validity".  Run "Fix Geometries" on the
 Figure out which data we want to get for get_census_data.R.  US female population counts.  
 
 ***Urban vs. Rural***
-`r tigris::urban_areas()`:  Urban areas include both "urbanized areas," which are densely developed areas with a population of at least 50,000, and "urban clusters," which have a population of greater than 2,500 but less than 50,000.
+`tigris::urban_areas()`:  Urban areas include both "urbanized areas," which are densely developed areas with a population of at least 50,000, and "urban clusters," which have a population of greater than 2,500 but less than 50,000.  This is for the methods:  https://www2.census.gov/geo/pdfs/reference/ua/2020_Urban_Areas_FAQs.pdf about the definitions of urban vs. rural.  I got a shapefile from TIGER: https://catalog.data.gov/dataset/tiger-line-shapefile-2017-2010-nation-u-s-2010-census-urban-area-national.  
+
+
