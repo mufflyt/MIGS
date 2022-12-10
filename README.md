@@ -43,7 +43,9 @@ https://stackoverflow.com/questions/42424544/here-api-these-credentials-do-not-a
 ***Shapefiles***
 You may download TIGER/Line Shapefiles using a Web interface, directly from our FTP site, or via an FTP client. To download through the Web interface or FTP site, go to <www.census.gov/programs -surveys/geography. html>. Choose Geographies, then Mapping Files, then TIGER/Line Shapefiles.
 
-Which files are national?  https://www.census.gov/programs-surveys/geography/technical-documentation/complete-technical-documentation/file-availability.html.  I found some national block group files at Block group data source: IPUMS NHGIS 2019 national shapefile and https://data2.nhgis.org/downloads when searching 2020.  
+Block group shapefile - 
+
+Which files are national?  https://www.census.gov/programs-surveys/geography/technical-documentation/complete-technical-documentation/file-availability.html.  I found some national block group files at Block group data source: IPUMS NHGIS 2019 national shapefile and https://data2.nhgis.org/ when searching 2020.  Because block groups crashed R and QGIS everytime I went to census tract.  
 
 Where is the water?  Downloaded the National Hydrography file from USGS.  https://www.sciencebase.gov/catalog/item/5ea068ae82cefae35a12a120, http://prd-tnm.s3-website-us-west-2.amazonaws.com/?prefix=StagedProducts/Hydrography/NHD/State/Shape/
 
