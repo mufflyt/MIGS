@@ -12,6 +12,14 @@ Make sure you are using the API key and not the Oath bearer ID for the here API.
 https://stackoverflow.com/questions/42424544/here-api-these-credentials-do-not-authorize-access-some-requests
 
 ***R files***
+***Order to Run the files in:***
+1.  get-census-data.R
+2.  clip-to-water.R
+3.  get-isochrones-migs.R
+4.  calculate-polygon-overlap.R
+5.  calculate-polygon-demographics.R
+
+
 ***points_to_polygons.R***
 Gathered data for women of reproductive age using US Census Bureau data.  I found the age and sex variables here:  (https://api.census.gov/data/2010/dec/sf1/variables.html) and chose "P012039","P012038","P012037", "P012036", "P012035", "P012034", "P012032","P012031".  I was able to get data from 2010 but not from 2020 decennial census.  Updated all packages.  
 
