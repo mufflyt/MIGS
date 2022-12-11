@@ -1,7 +1,18 @@
 # MIGS
 
-***points_to_polygons.R***
+***Installation***
+***QGIS version 3.28.1 Installed***
+After install make sure that you `brew update & brew upgrade`.  Without some gdal updates the system was crashing.  
 
+***Isochrones Tutorial***
+This Hannah Recht tutorial is like the holy grail that I have been looking for.  Amazing work and very cool coding techniques too.  I want to be this good when I grow up.  
+
+http://www.hrecht.com/r-drive-time-analysis-tutorial/tutorial.html
+Make sure you are using the API key and not the Oath bearer ID for the here API.  
+https://stackoverflow.com/questions/42424544/here-api-these-credentials-do-not-authorize-access-some-requests
+
+***R files***
+***points_to_polygons.R***
 Gathered data for women of reproductive age using US Census Bureau data.  I found the age and sex variables here:  (https://api.census.gov/data/2010/dec/sf1/variables.html) and chose "P012039","P012038","P012037", "P012036", "P012035", "P012034", "P012032","P012031".  I was able to get data from 2010 but not from 2020 decennial census.  Updated all packages.  
 
 ***Variables***
@@ -35,17 +46,12 @@ county_female_pop <- get_acs(geography = "county",
 ***Limitations***
 Limitations are limited population data 'Getting data from the 2019 1-year ACS.  The 1-year ACS provides data for geographies with populations of 65,000 and greater.'
 
-***Isochrones Tutorial***
-http://www.hrecht.com/r-drive-time-analysis-tutorial/tutorial.html
-Make sure you are using the API key and not the Oath bearer ID.  
-https://stackoverflow.com/questions/42424544/here-api-these-credentials-do-not-authorize-access-some-requests
-
 ***Shapefiles***
 You may download TIGER/Line Shapefiles using a Web interface, directly from our FTP site, or via an FTP client. To download through the Web interface or FTP site, go to <www.census.gov/programs -surveys/geography. html>. Choose Geographies, then Mapping Files, then TIGER/Line Shapefiles.
 
 Block group shapefile - 
 
-Which files are national?  https://www.census.gov/programs-surveys/geography/technical-documentation/complete-technical-documentation/file-availability.html.  I found some national block group files at Block group data source: IPUMS NHGIS 2019 national shapefile and https://data2.nhgis.org/ when searching 2020.  Because block groups crashed R and QGIS everytime I went to census tract.  
+Nice table that explains, Which files are national?  https://www.census.gov/programs-surveys/geography/technical-documentation/complete-technical-documentation/file-availability.html.  I found some national block group files at Block group data source: IPUMS NHGIS 2019 national shapefile and https://data2.nhgis.org/ when searching 2020.  Because block groups crashed R and QGIS everytime I went to census tract.  
 
 Where is the water?  Downloaded the National Hydrography file from USGS.  https://www.sciencebase.gov/catalog/item/5ea068ae82cefae35a12a120, http://prd-tnm.s3-website-us-west-2.amazonaws.com/?prefix=StagedProducts/Hydrography/NHD/State/Shape/
 
@@ -110,7 +116,7 @@ us_fips <- tigris::fips_codes %>%
   filter(state_code <56) %>% select(state_code) %>% pull()
 ```
 
-**get_isochrones.R** - This file calls the API for here and finds the isochrones.  Impressive AF.  I also like how she named the files get-??? so you had an idea of what goes first.  
+**get_isochrones.R** - This file calls the API for `here.com` and finds the isochrones.  Impressive AF.  I also like how Hannah Recht named the files get-??? so you had an idea of what goes first.  
 
 I kept getting this error and it was solved by SO.  
 `In CPL_write_ogr(obj, dsn, layer, driver, as.character(dataset_options),  :
