@@ -24,7 +24,10 @@ https://stackoverflow.com/questions/42424544/here-api-these-credentials-do-not-a
 Gathered data for women of reproductive age using US Census Bureau data.  I found the age and sex variables here:  (https://api.census.gov/data/2010/dec/sf1/variables.html) and chose "P012039","P012038","P012037", "P012036", "P012035", "P012034", "P012032","P012031".  I was able to get data from 2010 but not from 2020 decennial census.  Updated all packages.  
 
 ***Variables***
-Find the variables at https://www.socialexplorer.com/data/ACS2014_5yr/metadata/?ds=ACS14_5yr&var=B01001026.  We used 2019 data because 2020 was all estimated per tidycensus.  https://www.socialexplorer.com/data/ACS2019/documentation/53fe1152-1446-4d2a-9ec5-5db795d48eb6
+Find the variables at https://www.socialexplorer.com/data/ACS2014_5yr/metadata/?ds=ACS14_5yr&var=B01001026.  We used 2019 data because 2020 was all estimated per tidycensus.  https://www.socialexplorer.com/data/ACS2019/documentation/53fe1152-1446-4d2a-9ec5-5db795d48eb6.  
+
+This is the API with the list of variables to call:  https://api.census.gov/data/2010/dec/sf1/variables.html.  Then search for "sex by age"
+![Screen Shot 2022-12-14 at 8 20 32 PM](https://user-images.githubusercontent.com/44621942/207764774-f2965981-0e39-40af-9d52-df3cb4b410ac.jpg)
 
 Get 2020 data from the decennial census.  Getting this error: "Getting data from the 2020 decennial Census
 Using the PL 94-171 Redistricting Data summary file
@@ -35,6 +38,9 @@ The PL 94-171 Redistricting Data summary file is not available for the 2020 dece
 
 ***Materials & Methods***
 This is a good link to the accuracy of the ACS data:  https://www.socialexplorer.com/data/ACS2019/documentation/6f6b45bf-6046-4b82-9c17-053f8f4c8da1.  Good documentation for the ACS data: https://www.socialexplorer.com/data/ACS2019/documentation/ca1173fe-3362-4468-86f6-a2fedfe34955.  
+
+"American Community Survey data are designed to show the characteristics of the nation's population and should not be used as actual population counts or housing totals for the nation, states or counties." - https://www.census.gov/content/dam/Census/programs-surveys/acs/news/10ACS_keyfacts.pdf
+
 ```{r}
 # Set a dataset of median home values from the 1-year ACS  #shift Hawaii and AK
 county_female_pop <- get_acs(geography = "county", 
